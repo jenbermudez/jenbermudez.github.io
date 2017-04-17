@@ -8,8 +8,8 @@ module.exports = {
     './src/styles.css'
   ],
   output: {
-    filename: '[hash].js',
-    path: path.resolve(__dirname, '..')
+    filename: '[hash].bundle.js',
+    path: path.resolve(__dirname)
   },
   module: {
     rules: [
@@ -17,9 +17,18 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: "css-loader"
+          use: [
+            {
+              loader: "css-loader",
+              options: {
+                importLoaders: 1
+              }
+            },
+            "postcss-loader"
+          ]
         })
-      }
+      },
+      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
     ]
   },
   plugins: [
