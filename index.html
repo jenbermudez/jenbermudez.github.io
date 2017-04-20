@@ -4,83 +4,80 @@
   <title>Jen Bermudez</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="5627489909ef837d886456a3558e6dab.css" rel="stylesheet"></head>
+<link href="7ff473b85368574a615975e94a30b795.css" rel="stylesheet"></head>
 <body>
   <main>
-    <section class="hero is-medium is-light">
-      <div class="hero-head">
-        <header class="nav">
-          <div class="container">
-            <div class="nav-center nav-menu">
-              <a class="nav-item is-tab is-hidden-touch is-active">
-                Home
-              </a>
-              <a class="nav-item is-tab is-hidden-touch">
-                Projects
-              </a>
-              <a class="nav-item is-tab is-hidden-touch">
-                Contact
-              </a>
-            </div>
-    
-            <span class="nav-toggle is-flex-touch">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
+    <header id="home" class="hero">
+      <nav class="nav">
+        <div class="nav__menu">
+          <div class="hamburger" onclick="navToggle(this)">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
-        </header>
+          <ul class="nav__links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="hero__content">
+        <h1 class="title">Jen Bermudez</h1>
+        <h2 class="subtitle">Hi, I'm Jen!  I'm a front-end web developer from Los Angeles, CA.</h2>
       </div>
-      
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title is-1">Jen Bermudez</h1>
-          <h2 class="subtitle">Not ready...</h2>
+    </header>
+
+    <section class="projects" id="projects">
+      <div class="projects-wrapper">
+        <div class="projects__title-container">
+          <h2 class="projects__title">Projects</h2>
+        </div>
+
+        <div class="projects__featured-project" id="project1">
+          <div class="projects__image">
+            <img src="/10kid-med.jpg" alt="10kid">
+          </div>
+          <div class="projects__description">
+            <h3><a href="http://10kid.com/">10kid</a></h3>
+            <p>Text will go here somewhere</p>
+            <div class="projects__skills">
+              <span class="projects__tag">HTML5/CSS3</span>
+              <span class="projects__tag">JavaScript</span>
+              <span class="projects__tag">Responsive Design</span>
+              <span class="projects__tag">Sass</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects__featured-project" id="project2">
+          <div class="projects__image">
+            <img src="/10devices-med.jpg" alt="10devices">
+          </div>
+          <div class="projects__description">
+            <h3><a href="http://10devices.com/">10devices</a></h3>
+            <p>Text will go here somewhere</p>
+            <div class="projects__skills">
+              <span class="projects__tag">HTML5/CSS3</span>
+              <span class="projects__tag">JavaScript</span>
+              <span class="projects__tag">Responsive Design</span>
+              <span class="projects__tag">Sass</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section projects">
-      <div class="container">
-        <div class="heading">
-          <h2 class="subtitle">Featured Work</h2>
-        </div>
-      </div>
-
-      <div class="container project">
-        <div class="columns">
-          <div class="column is-two-thirds image is-3by1">
-            <img src="http://placehold.it/350x200">
-          </div>
-          <div class="column auto">
-            <p>Text will go here somewhere</p>
-            <span class="tag is-light">HTML5/CSS3</span>
-            <span class="tag is-light">JavaScript</span>
-            <span class="tag is-light">Responsive Design</span>
-            <span class="tag is-light">Sass</span>
-          </div>
-        </div>
-      
-      </div>
-
-       <div class="container project">
-        <div class="columns">
-           <div class="column auto">
-            <p>Text will go here somewhere</p>
-            <span class="tag is-dark">HTML5/CSS3</span>
-            <span class="tag is-dark">JavaScript</span>
-            <span class="tag is-dark">Responsive Design</span>
-            <span class="tag is-dark">Sass</span>
-          </div>
-          <div class="column is-two-thirds image is-480-320">
-            <img src="http://bulma.io/images/placeholders/480x320.png">
-          </div>
-        </div>
+    <section class="contact" id="contact">
+      <div class="contact__content">
+        <h2 class="contact__title">Contact</h2>
+        <a href="mailto:jenbermudez@gmail.com">jenbermudez@gmail.com</a>
       </div>
     </section>
 
   </main>
-<script type="text/javascript" src="d09b124ca70a0e7906ca.bundle.js"></script></body>
+<script type="text/javascript" src="21890072d7d5728ba5a0.bundle.js"></script></body>
 </html>
