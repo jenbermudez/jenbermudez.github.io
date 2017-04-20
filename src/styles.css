@@ -17,40 +17,134 @@ body {
   margin: 0;
 }
 
-#home {
-  background-color: white;
+.hero {
+  position: relative;
+  /*may want to change back to display block and remove the other flex items*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60vh;
+  max-width: 100%;
+  background-color:#666;
+  z-index: 0;
+
+  &__content {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 2em;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  &__content h1 {
+    font-weight: 300;
+    font-size: 2em;
+    text-transform: uppercase;
+  }
+  &__content h2 {
+    font-size: 1.1em;
+    font-weight: 400;
+  }
+}
+
+.hero:after {
+  content: "";
+  background: url("/light-bulb-1246043.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 .nav {
   box-shadow: 0 1px 0 rgba(54, 54,54, 0.2);
+ 
   &__links {
      list-style: none;
      padding: 0;
      margin: 0;
+     text-align: center;
+     display: none;
    }
   &__links a {
     text-decoration: none;
-    color: rgba(54, 54, 54, 0.7);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1em;
     transition: none 86ms ease-out;
-    // will need to change the colors below
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
+    display: block;
   }
   &__links a:hover {
-    color: #363636;
-    border-bottom-color: $teal;
-    border-top-color: transparent;
+    color: white;
   }
   &__links a:active {
     color: #363636;
-    border-bottom: 3px solid $teal;
     padding-bottom: calc(0.75rem -3px);
+  }
+  &__links li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    margin: 10px 3% 0 3%;
+    padding: 0 0 10px 0;
+  }
+  &__links li:last-of-type {
+    border-bottom: none;
   }
 }
 
-.hero {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+.hamburger {
+  width: 60px;
+  height: 45px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  & span {
+    display: block;
+    position: absolute;
+    height: 9px;
+    width: 100%;
+    background: rgba(255, 255, 255, 1);
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+  }
+  & span:nth-child(1) {
+    top: 0px;
+  }
+  & span:nth-child(2), span:nth-child(3) {
+    top: 18px;
+  }
+  & span:nth-child(4) {
+    top: 36px;
+  }
+}
+
+.responsive {
+  display: block;
+}
+
+.open  {
+  & span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+  & span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+  & span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+  & span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
 }
 
 .projects {
@@ -67,7 +161,7 @@ body {
   }
   &__title-container h2 {
     color: #4a4a4a;
-    font-weight: 300;
+    font-weight: 700;
     margin: 0;
   }
   &__featured-project {
@@ -109,15 +203,36 @@ body {
   }
 }
 
+.contact {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
 /* may need to change min-width */
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   /*for tablets*/
+  .hero {
+    &__content {
+      // padding: 20em 2em 3em;
+    }
+  }
+  
   .nav {
+    height: auto;
+    width: 100%;
+    
+    &__menu {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 2em;
+    }
     &__links {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      padding: 1em 0;
     }
     &__links li {
       padding-top: calc(0.75rem - 1px);
@@ -128,12 +243,23 @@ body {
       padding-left: 1rem;
       padding-right: 1rem;
     }
-   
+    &__links a:hover {
+      color: white;
+      border-bottom-color: $teal;
+      border-top-color: transparent;
+    }
+    &__links a:active {
+      color: #363636;
+      border-bottom: 3px solid $teal;
+      padding-bottom: calc(0.75rem -3px);
+    }
+    &__links li {
+      border-bottom: none;
+    }
   }
 
-  .hero {
-    padding-top: 9rem;
-    padding-bottom: 9rem;
+  .hamburger {
+    display: none;
   }
 
   .projects {
@@ -151,6 +277,16 @@ body {
     }
     &__description h3 {
       margin: 0;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 960px) {
+  /* for desktops */
+  .hero {
+    &__content {
+      // padding-bottom: calc((60vh - 6em));
     }
   }
 }
