@@ -18,30 +18,31 @@ body {
 }
 
 .hero {
-  position: relative;
-  /*may want to change back to display block and remove the other flex items*/
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   height: 100vh;
   max-width: 100%;
-  background-color:#666;
   z-index: 0;
 
-  &__content {
-    color: rgba(255, 255, 255, 0.8);
-    padding: 2em;
+  &__wrapper {
     max-width: 960px;
     margin: 0 auto;
   }
+  &__content {
+    position: absolute;
+    bottom: 5%;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 2em;
+  }
   &__content h1 {
+    font-family: 'Shadows Into Light', cursive;
     font-weight: 300;
-    font-size: 2em;
-    text-transform: uppercase;
+    font-size: 4em;
+    text-transform: lowercase;
+    margin-bottom: 0;
   }
   &__content h2 {
-    font-size: 1.1em;
+    font-size: 1.75em;
     font-weight: 400;
+    margin-top: 0.3em;
   }
 }
 
@@ -51,7 +52,6 @@ body {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.5;
   top: 0;
   left: 0;
   bottom: 0;
@@ -148,12 +148,15 @@ body {
   }
 }
 
+main {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 .projects {
   background-color: whitesmoke;
 
   &-wrapper {
-    max-width: 960px;
-    margin: 0 auto;
     padding: 2em;
   }
 
@@ -205,8 +208,6 @@ body {
 }
 
 .contact {
-  max-width: 960px;
-  margin: 0 auto;
   padding: 2em;
 }
 
@@ -214,18 +215,17 @@ body {
 @media only screen and (min-width: 768px) {
   /*for tablets*/
   .hero {
-    &__content {
-      // padding: 20em 2em 3em;
+      &__content {
+      bottom: 10%; 
+      left: 5%;
+      }
     }
-  }
   
   .nav {
     height: auto;
     width: 100%;
     
     &__menu {
-      max-width: 960px;
-      margin: 0 auto;
       padding: 0 2em;
     }
     &__links {
@@ -287,7 +287,9 @@ body {
   /* for desktops */
   .hero {
     &__content {
-      // padding-bottom: calc((60vh - 6em));
+      bottom: 15%;
+      left: initial;
+      width: 48%;
     }
   }
 }
