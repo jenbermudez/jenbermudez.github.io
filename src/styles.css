@@ -1,4 +1,400 @@
-/** {
-  border: 1px solid purple;
+$teal: #00d1b2;
+$tag_background: $teal;
+
+* {
+  // border: 1px solid purple;
   box-sizing: border-box;
-}*/
+}
+
+html {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+}
+
+.hero {
+  height: 100vh;
+  max-width: 100%;
+  z-index: 0;
+
+  &__wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  &__content {
+    position: absolute;
+    bottom: 3%;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 2em;
+  }
+  &__content h1 {
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: 300;
+    font-size: 3em;
+    text-transform: lowercase;
+    margin-bottom: 0;
+  }
+  &__content h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-top: 0.3em;
+  }
+  &__scroll {
+    position: absolute;
+    left: calc((100% - 2em) / 2);
+    bottom: 2%;
+  }
+  &__scroll a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 4em;
+  }
+  &__scroll a:hover {
+    color: white;
+  }
+  &__scroll a:active {
+    color: #363636;
+    padding-bottom: calc(0.75rem -3px);
+  }
+}
+
+.hero::after {
+  content: "";
+  background: url("/light-bulb-1246043.jpg");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.nav {
+  box-shadow: 0 1px 0 rgba(54, 54,54, 0.2);
+  position: absolute;
+  width: 100%;
+  height: auto;
+ 
+  &__links {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+     text-align: center;
+     display: none;
+   }
+  &__links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1em;
+    transition: none 86ms ease-out;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    display: block;
+  }
+  &__links a:hover {
+    color: white;
+  }
+  &__links a:active {
+    color: #363636;
+    padding-bottom: calc(0.75rem -3px);
+  }
+  &__links li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    margin: 10px 3% 0 3%;
+    padding: 0 0 10px 0;
+  }
+  &__links li:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.hamburger {
+  margin: 1em 2em;
+  width: 40px;
+  height: 25px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  & span {
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: rgba(255, 255, 255, 1);
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+  }
+  & span:nth-child(1) {
+    top: 0%;
+  }
+  & span:nth-child(2), span:nth-child(3) {
+    top: 50%;
+  }
+  & span:nth-child(4) {
+    top: 100%;
+  }
+}
+
+.responsive {
+  display: block;
+}
+
+.open  {
+  & span:nth-child(1) {
+    top: 50%;
+    width: 0%;
+    left: 50%;
+  }
+  & span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+  & span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+  & span:nth-child(4) {
+    top: 50%;
+    width: 0%;
+    left: 50%;
+  }
+}
+
+main {
+  width: 100%;
+  background-color: #EFEBEB;
+}
+
+.projects {
+  max-width: 960px;
+  margin: 0 auto;
+
+  &-wrapper {
+    padding: 4em 2em;
+  }
+
+  &__title-container {
+    padding: 0 0 2em 0;
+    text-align: center;
+  }
+  &__title-container h2 {
+    color:rgba(54, 54, 54, 1);
+    font-weight: 400;
+    // margin: 0;
+    font-size: 2.5em;
+  }
+  &__featured-project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 4em;
+  }
+  &__image {
+    width: 100%;
+  }
+  &__image img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #f5f6f7;
+  }
+  &__image img:hover {
+    opacity: 0.9;
+  }
+  &__description {
+    padding: 0;
+    width: 100%;
+    color: rgba(54, 54, 54, 1);
+    text-align: center;
+  }
+  &__description h3 {
+    font-size: 1.5em;
+    margin-bottom: 0;
+  }
+  &__description a {
+    text-decoration: none;
+    color: #363636;
+  }
+  &__description a:hover {
+    color: lightslategray;
+  }
+  &__description a:active {
+    color: black;
+    padding-bottom: calc(1rem -3px);
+  }
+  &__tag {
+   background-color: $tag_background;
+   color: white;
+   border-radius: 10px;
+   font-size: 0.75rem;
+   line-height: 2.5em;
+   white-space: nowrap;
+   vertical-align: top;
+   padding: 0.35em 0.875em;
+  }
+}
+
+.contact {
+  padding: 4em 2em;
+  max-width: 960px;
+  margin: 0 auto;
+
+  &__content {
+    color: rgba(54, 54, 54, 1);
+    text-align: center;
+  }
+  &__content h2 {
+    font-size: 2.5em;
+    font-weight: 400;
+  }
+  &__content p {
+    color: rgba(54, 54, 54, 0.7);
+  }
+  &__content a {
+    text-decoration: none;
+    color: rgba(54, 54, 54, 1);
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: #EFEBEB;;
+}
+
+.footer {
+  &__links {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  &__links p {
+    text-align: center;
+    padding: 0 1em 40px;
+    margin: 0;
+    color: rgba(54, 54, 54, 0.7);
+    font-weight: 300;
+  }
+  &__links ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 20px 0 0 0;
+  }
+  &__links ul li {
+    padding: 20px 0;
+    margin: 0 3%;
+  }
+  &__links ul li a {
+    text-decoration: none;
+    color: rgba(54, 54, 54, 1);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.1rem;
+    display: block;
+  }
+}
+
+/* may need to change min-width */
+@media only screen and (min-width: 768px) {
+  /*for tablets*/
+  .hero {
+      &__content {
+      bottom: 10%; 
+      left: 5%;
+      width: 75%;
+      }
+      &__content h1 {
+        font-size: 4em;
+      }
+      &__content h2 {
+        font-size: 1.75em;
+      }
+    }
+
+  .hero::after {
+    background: url("/light-bulb-1246043_lg.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  
+  .nav {
+    position: initial;
+    
+    &__menu {
+      padding: 0 2em;
+    }
+    &__links {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 1em 0;
+    }
+    &__links li {
+      padding-top: calc(0.75rem - 1px);
+      padding-bottom: calc(0.75rem - 1px);
+    }
+    &__links a {
+      cursor: pointer;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    &__links a:hover {
+      color: white;
+      border-bottom-color: $teal;
+      border-top-color: transparent;
+    }
+    &__links a:active {
+      color: #363636;
+      border-bottom: 3px solid $teal;
+      padding-bottom: calc(0.75rem -3px);
+    }
+    &__links li {
+      border-bottom: none;
+    }
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .projects {
+    &__featured-project {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start; 
+    }
+    &__image {
+      max-width: 50%;
+    }
+    &__description {
+      max-width: 50%;
+      padding: 0 0 0 3em ;
+      text-align: initial;
+    }
+    &__description h3 {
+      margin: 0;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 960px) {
+  /* for desktops */
+  .hero {
+    &__content {
+      bottom: 15%;
+      left: 10%;
+      width: 48%;
+    }
+  }
+}
