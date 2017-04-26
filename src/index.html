@@ -19,15 +19,20 @@
               <span></span>
             </div>
             <ul class="nav__links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" onclick="smoothScroll('#home', true)">Home</a></li>
+                <li><a href="#projects" onClick="smoothScroll('#projects', true)">Projects</a></li>
+                <li><a href="#contact" onClick="smoothScroll('#contact', true)">Contact</a></li>
             </ul>
           </div>
         </nav>
         <div class="hero__content">
           <h1 class="title">Jen Bermudez</h1>
           <h2 class="subtitle">Hi, I'm Jen!  I'm a front-end web developer in Los Angeles, CA.</h2>
+        </div>
+        <div class="hero__scroll">
+          <a href="#projects" onClick="smoothScroll('#projects')">
+            ⌄
+          </a>
         </div>
       </div>
     </header>
@@ -41,10 +46,10 @@
 
           <div class="projects__featured-project" id="project1">
             <div class="projects__image">
-              <img src="/10kid-med.jpg" alt="10kid">
+              <a href="http://10kid.com/" target="_blank"><img src="/10kid-med.jpg" alt="10kid"></a>
             </div>
             <div class="projects__description">
-              <h3><a href="http://10kid.com/">10kid</a></h3>
+              <h3><a href="http://10kid.com/" target="_blank">10kid</a></h3>
               <p>Text will go here somewhere</p>
               <div class="projects__skills">
                 <span class="projects__tag">HTML5/CSS3</span>
@@ -57,10 +62,10 @@
 
           <div class="projects__featured-project" id="project2">
             <div class="projects__image">
-              <img src="/10devices-med.jpg" alt="10devices">
+              <a href="http://10devices.com/" target="_blank"><img src="/10devices-med.jpg" alt="10devices"></a>
             </div>
             <div class="projects__description">
-              <h3><a href="http://10devices.com/">10devices</a></h3>
+              <h3><a href="http://10devices.com/" target="_blank">10devices</a></h3>
               <p>Text will go here somewhere</p>
               <div class="projects__skills">
                 <span class="projects__tag">HTML5/CSS3</span>
@@ -72,17 +77,22 @@
           </div>
         </div>
       </section>
-
+    </main>
       <section class="contact" id="contact">
         <div class="contact__content">
           <h2 class="contact__title">Contact</h2>
-          <a href="mailto:jenbermudez@gmail.com">jenbermudez@gmail.com</a>
+          <p>Get in touch:  <a href="mailto:jenbermudez[at]gmail.com">jenbermudez[at]gmail.com</a></p>
         </div>
       </section>
-    </main>
-
     <footer>
-      
+      <div class="footer__links">
+        <ul>
+          <li><a href="#home" onClick="smoothScroll('#home')">Home</a></li>
+          <li><a href="#projects" onClick="smoothScroll('#projects')">Projects</a></li>
+          <li><a href="https://github.com/jenbermudez" target="_blank">Github</a></li>
+        </ul>
+        <p>© Jen Bermudez 2017</p>
+      </div>
     </footer>
   </div>
 </body>

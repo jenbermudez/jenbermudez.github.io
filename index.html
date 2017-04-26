@@ -4,80 +4,96 @@
   <title>Jen Bermudez</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="7ff473b85368574a615975e94a30b795.css" rel="stylesheet"></head>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i,700|Shadows+Into+Light" rel="stylesheet">
+<link href="c7f04c80f7ead702777736cfe58f907a.css" rel="stylesheet"></head>
 <body>
-  <main>
+  <div id="page">
     <header id="home" class="hero">
-      <nav class="nav">
-        <div class="nav__menu">
-          <div class="hamburger" onclick="navToggle(this)">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+      <div class="hero__wrapper">
+        <nav class="nav">
+          <div class="nav__menu">
+            <div class="hamburger" onclick="navToggle(this)">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <ul class="nav__links">
+                <li><a href="#home" onclick="smoothScroll('#home', true)">Home</a></li>
+                <li><a href="#projects" onClick="smoothScroll('#projects', true)">Projects</a></li>
+                <li><a href="#contact" onClick="smoothScroll('#contact', true)">Contact</a></li>
+            </ul>
           </div>
-          <ul class="nav__links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
-          </ul>
+        </nav>
+        <div class="hero__content">
+          <h1 class="title">Jen Bermudez</h1>
+          <h2 class="subtitle">Hi, I'm Jen!  I'm a front-end web developer in Los Angeles, CA.</h2>
         </div>
-      </nav>
-      <div class="hero__content">
-        <h1 class="title">Jen Bermudez</h1>
-        <h2 class="subtitle">Hi, I'm Jen!  I'm a front-end web developer from Los Angeles, CA.</h2>
+        <div class="hero__scroll">
+          <a href="#projects" onClick="smoothScroll('#projects')">
+            ⌄
+          </a>
+        </div>
       </div>
     </header>
-
-    <section class="projects" id="projects">
-      <div class="projects-wrapper">
-        <div class="projects__title-container">
-          <h2 class="projects__title">Projects</h2>
-        </div>
-
-        <div class="projects__featured-project" id="project1">
-          <div class="projects__image">
-            <img src="/10kid-med.jpg" alt="10kid">
+    
+    <main>
+      <section class="projects" id="projects">
+        <div class="projects-wrapper">
+          <div class="projects__title-container">
+            <h2 class="projects__title">Projects</h2>
           </div>
-          <div class="projects__description">
-            <h3><a href="http://10kid.com/">10kid</a></h3>
-            <p>Text will go here somewhere</p>
-            <div class="projects__skills">
-              <span class="projects__tag">HTML5/CSS3</span>
-              <span class="projects__tag">JavaScript</span>
-              <span class="projects__tag">Responsive Design</span>
-              <span class="projects__tag">Sass</span>
+
+          <div class="projects__featured-project" id="project1">
+            <div class="projects__image">
+              <a href="http://10kid.com/" target="_blank"><img src="/10kid-med.jpg" alt="10kid"></a>
+            </div>
+            <div class="projects__description">
+              <h3><a href="http://10kid.com/" target="_blank">10kid</a></h3>
+              <p>Text will go here somewhere</p>
+              <div class="projects__skills">
+                <span class="projects__tag">HTML5/CSS3</span>
+                <span class="projects__tag">JavaScript</span>
+                <span class="projects__tag">Responsive Design</span>
+                <span class="projects__tag">Sass</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="projects__featured-project" id="project2">
+            <div class="projects__image">
+              <a href="http://10devices.com/" target="_blank"><img src="/10devices-med.jpg" alt="10devices"></a>
+            </div>
+            <div class="projects__description">
+              <h3><a href="http://10devices.com/" target="_blank">10devices</a></h3>
+              <p>Text will go here somewhere</p>
+              <div class="projects__skills">
+                <span class="projects__tag">HTML5/CSS3</span>
+                <span class="projects__tag">JavaScript</span>
+                <span class="projects__tag">Responsive Design</span>
+                <span class="projects__tag">Sass</span>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="projects__featured-project" id="project2">
-          <div class="projects__image">
-            <img src="/10devices-med.jpg" alt="10devices">
-          </div>
-          <div class="projects__description">
-            <h3><a href="http://10devices.com/">10devices</a></h3>
-            <p>Text will go here somewhere</p>
-            <div class="projects__skills">
-              <span class="projects__tag">HTML5/CSS3</span>
-              <span class="projects__tag">JavaScript</span>
-              <span class="projects__tag">Responsive Design</span>
-              <span class="projects__tag">Sass</span>
-            </div>
-          </div>
+      </section>
+    </main>
+      <section class="contact" id="contact">
+        <div class="contact__content">
+          <h2 class="contact__title">Contact</h2>
+          <p>Get in touch:  <a href="mailto:jenbermudez[at]gmail.com">jenbermudez[at]gmail.com</a></p>
         </div>
+      </section>
+    <footer>
+      <div class="footer__links">
+        <ul>
+          <li><a href="#home" onClick="smoothScroll('#home')">Home</a></li>
+          <li><a href="#projects" onClick="smoothScroll('#projects')">Projects</a></li>
+          <li><a href="https://github.com/jenbermudez" target="_blank">Github</a></li>
+        </ul>
+        <p>© Jen Bermudez 2017</p>
       </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="contact__content">
-        <h2 class="contact__title">Contact</h2>
-        <a href="mailto:jenbermudez@gmail.com">jenbermudez@gmail.com</a>
-      </div>
-    </section>
-
-  </main>
-<script type="text/javascript" src="21890072d7d5728ba5a0.bundle.js"></script></body>
+    </footer>
+  </div>
+<script type="text/javascript" src="7b3936f720d8b5d20cf9.bundle.js"></script></body>
 </html>

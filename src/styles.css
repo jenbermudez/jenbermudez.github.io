@@ -28,29 +28,46 @@ body {
   }
   &__content {
     position: absolute;
-    bottom: 5%;
+    bottom: 3%;
     color: rgba(255, 255, 255, 0.8);
     padding: 2em;
   }
   &__content h1 {
     font-family: 'Shadows Into Light', cursive;
     font-weight: 300;
-    font-size: 4em;
+    font-size: 3em;
     text-transform: lowercase;
     margin-bottom: 0;
   }
   &__content h2 {
-    font-size: 1.75em;
+    font-size: 1.5em;
     font-weight: 400;
     margin-top: 0.3em;
   }
+  &__scroll {
+    position: absolute;
+    left: calc((100% - 2em) / 2);
+    bottom: 2%;
+  }
+  &__scroll a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 4em;
+  }
+  &__scroll a:hover {
+    color: white;
+  }
+  &__scroll a:active {
+    color: #363636;
+    padding-bottom: calc(0.75rem -3px);
+  }
 }
 
-.hero:after {
+.hero::after {
   content: "";
   background: url("/light-bulb-1246043.jpg");
   background-size: cover;
-  background-position: center center;
+  background-position: center right;
   background-repeat: no-repeat;
   top: 0;
   left: 0;
@@ -62,6 +79,9 @@ body {
 
 .nav {
   box-shadow: 0 1px 0 rgba(54, 54,54, 0.2);
+  position: absolute;
+  width: 100%;
+  height: auto;
  
   &__links {
      list-style: none;
@@ -149,30 +169,33 @@ body {
 }
 
 main {
-  max-width: 960px;
-  margin: 0 auto;
+  width: 100%;
+  background-color: #EFEBEB;
 }
 
 .projects {
-  background-color: whitesmoke;
+  max-width: 960px;
+  margin: 0 auto;
 
   &-wrapper {
-    padding: 2em;
+    padding: 4em 2em;
   }
 
   &__title-container {
     padding: 0 0 2em 0;
+    text-align: center;
   }
   &__title-container h2 {
-    color: #4a4a4a;
-    font-weight: 700;
-    margin: 0;
+    color:rgba(54, 54, 54, 1);
+    font-weight: 400;
+    // margin: 0;
+    font-size: 2.5em;
   }
   &__featured-project {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 3em;
+    padding-bottom: 4em;
   }
   &__image {
     width: 100%;
@@ -182,10 +205,14 @@ main {
     height: auto;
     border: 1px solid #f5f6f7;
   }
+  &__image img:hover {
+    opacity: 0.9;
+  }
   &__description {
     padding: 0;
     width: 100%;
-    color: rgba(54, 54, 54, 0.7);
+    color: rgba(54, 54, 54, 1);
+    text-align: center;
   }
   &__description h3 {
     font-size: 1.5em;
@@ -195,12 +222,19 @@ main {
     text-decoration: none;
     color: #363636;
   }
+  &__description a:hover {
+    color: lightslategray;
+  }
+  &__description a:active {
+    color: black;
+    padding-bottom: calc(1rem -3px);
+  }
   &__tag {
    background-color: $tag_background;
    color: white;
-   border-radius: 290486px;
+   border-radius: 10px;
    font-size: 0.75rem;
-   line-height: 1.5;
+   line-height: 2.5em;
    white-space: nowrap;
    vertical-align: top;
    padding: 0.35em 0.875em;
@@ -208,7 +242,64 @@ main {
 }
 
 .contact {
-  padding: 2em;
+  padding: 4em 2em;
+  max-width: 960px;
+  margin: 0 auto;
+
+  &__content {
+    color: rgba(54, 54, 54, 1);
+    text-align: center;
+  }
+  &__content h2 {
+    font-size: 2.5em;
+    font-weight: 400;
+  }
+  &__content p {
+    color: rgba(54, 54, 54, 0.7);
+  }
+  &__content a {
+    text-decoration: none;
+    color: rgba(54, 54, 54, 1);
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: #EFEBEB;;
+}
+
+.footer {
+  &__links {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  &__links p {
+    text-align: center;
+    padding: 0 1em 40px;
+    margin: 0;
+    color: rgba(54, 54, 54, 0.7);
+    font-weight: 300;
+  }
+  &__links ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 20px 0 0 0;
+  }
+  &__links ul li {
+    padding: 20px 0;
+    margin: 0 3%;
+  }
+  &__links ul li a {
+    text-decoration: none;
+    color: rgba(54, 54, 54, 1);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.1rem;
+    display: block;
+  }
 }
 
 /* may need to change min-width */
@@ -218,12 +309,25 @@ main {
       &__content {
       bottom: 10%; 
       left: 5%;
+      width: 75%;
+      }
+      &__content h1 {
+        font-size: 4em;
+      }
+      &__content h2 {
+        font-size: 1.75em;
       }
     }
+
+  .hero::after {
+    background: url("/light-bulb-1246043_lg.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
   
   .nav {
-    height: auto;
-    width: 100%;
+    position: initial;
     
     &__menu {
       padding: 0 2em;
@@ -274,7 +378,8 @@ main {
     }
     &__description {
       max-width: 50%;
-      padding: 0 3em ;
+      padding: 0 0 0 3em ;
+      text-align: initial;
     }
     &__description h3 {
       margin: 0;
@@ -288,7 +393,7 @@ main {
   .hero {
     &__content {
       bottom: 15%;
-      left: initial;
+      left: 10%;
       width: 48%;
     }
   }
