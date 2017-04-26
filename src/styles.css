@@ -48,6 +48,7 @@ body {
     position: absolute;
     left: calc((100% - 2em) / 2);
     bottom: 2%;
+    display: none;
   }
   &__scroll a {
     text-decoration: none;
