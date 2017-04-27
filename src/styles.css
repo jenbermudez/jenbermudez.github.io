@@ -2,7 +2,6 @@ $teal: #00d1b2;
 $tag_background: $teal;
 
 * {
-  // border: 1px solid purple;
   box-sizing: border-box;
 }
 
@@ -20,7 +19,6 @@ body {
 .hero {
   height: 100vh;
   max-width: 100%;
-  z-index: 0;
 
   &__wrapper {
     max-width: 960px;
@@ -29,8 +27,10 @@ body {
   &__content {
     position: absolute;
     bottom: 3%;
+    width: 100%;
     color: rgba(255, 255, 255, 0.8);
     padding: 2em;
+    z-index: 0;
   }
   &__content h1 {
     font-family: 'Shadows Into Light', cursive;
@@ -38,6 +38,7 @@ body {
     font-size: 3em;
     text-transform: lowercase;
     margin-bottom: 0;
+    margin-top: 0;
   }
   &__content h2 {
     font-size: 1.5em;
@@ -46,17 +47,19 @@ body {
   }
   &__scroll {
     position: absolute;
-    left: calc((100% - 2em) / 2);
     bottom: 2%;
-    display: none;
+    left: calc(50% - 1em);
+    text-align: center;
   }
   &__scroll a {
-    text-decoration: none;
     color: rgba(255, 255, 255, 0.8);
-    font-size: 4em;
+    text-decoration: none;
+    font-size: 2em;
+    transition: none 86ms ease-out;
   }
   &__scroll a:hover {
     color: white;
+    opacity: 1;
   }
   &__scroll a:active {
     color: #363636;
@@ -80,10 +83,15 @@ body {
 
 .nav {
   box-shadow: 0 1px 0 rgba(54, 54,54, 0.2);
-  position: absolute;
+  position: relative;
   width: 100%;
   height: auto;
- 
+
+  &__menu {
+    padding: 1em 2em 0 2em;
+    min-height: 57px;
+  }
+
   &__links {
      list-style: none;
      padding: 0;
@@ -109,7 +117,7 @@ body {
   }
   &__links li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.7);
-    margin: 10px 3% 0 3%;
+    margin: 10px 0 0 0;
     padding: 0 0 10px 0;
   }
   &__links li:last-of-type {
@@ -118,10 +126,11 @@ body {
 }
 
 .hamburger {
-  margin: 1em 2em;
   width: 40px;
   height: 25px;
   position: relative;
+  top: 0;
+  left: 0;
   transform: rotate(0deg);
   transition: .5s ease-in-out;
   cursor: pointer;
@@ -230,6 +239,9 @@ main {
     color: black;
     padding-bottom: calc(1rem -3px);
   }
+  &__description p {
+    display: none;
+  }
   &__tag {
    background-color: $tag_background;
    color: white;
@@ -295,15 +307,42 @@ footer {
   }
   &__links ul li a {
     text-decoration: none;
-    color: rgba(54, 54, 54, 1);
+    color: rgba(54, 54, 54, 0.8);
     padding-left: 1rem;
     padding-right: 1rem;
     font-size: 1.1rem;
     display: block;
+    transition: none 86ms ease-out;
+  }
+  &__links ul li a:hover {
+    color: rgba(54, 54, 54, 1);
+  }
+  &__links ul li a:active {
+    color: white;
+    padding-bottom: calc(0.75rem -3px);
   }
 }
 
-/* may need to change min-width */
+@media only screen and (min-width: 600px) {
+  /*for small tablets*/
+  .hero {
+    &__content {
+      bottom: 7%;
+      left: 3%;
+    }
+    &__content h1 {
+      font-size: 3.5em;
+    }
+  }
+
+  .hero::after {
+    background: url('/light-bulb-1246043_med.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   /*for tablets*/
   .hero {
@@ -343,6 +382,7 @@ footer {
     &__links li {
       padding-top: calc(0.75rem - 1px);
       padding-bottom: calc(0.75rem - 1px);
+      margin: 10px 3% 0 3%;
     }
     &__links a {
       cursor: pointer;
@@ -395,7 +435,7 @@ footer {
     &__content {
       bottom: 15%;
       left: 10%;
-      width: 48%;
+      width: 65%;
     }
   }
 }
