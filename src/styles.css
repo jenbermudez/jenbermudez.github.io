@@ -19,6 +19,14 @@ body {
 .hero {
   height: 100vh;
   max-width: 100%;
+  background: url("/light-bulb-1246043.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 
   &__wrapper {
     max-width: 960px;
@@ -65,20 +73,6 @@ body {
     color: #363636;
     padding-bottom: calc(0.75rem -3px);
   }
-}
-
-.hero::after {
-  content: "";
-  background: url("/light-bulb-1246043.jpg");
-  background-size: cover;
-  background-position: center right;
-  background-repeat: no-repeat;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
 }
 
 .nav {
@@ -326,6 +320,11 @@ footer {
 @media only screen and (min-width: 600px) {
   /*for small tablets*/
   .hero {
+    background: url('/light-bulb-1246043_med.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
     &__content {
       bottom: 7%;
       left: 3%;
@@ -334,18 +333,16 @@ footer {
       font-size: 3.5em;
     }
   }
-
-  .hero::after {
-    background: url('/light-bulb-1246043_med.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
 }
 
 @media only screen and (min-width: 768px) {
   /*for tablets*/
   .hero {
+    background: url("/light-bulb-1246043_lg.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
       &__content {
       bottom: 10%; 
       left: 5%;
@@ -357,13 +354,6 @@ footer {
       &__content h2 {
         font-size: 1.75em;
       }
-    }
-
-  .hero::after {
-    background: url("/light-bulb-1246043_lg.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
   }
   
   .nav {
